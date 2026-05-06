@@ -96,6 +96,45 @@ function operate(vehicle: car | Bike) {
 }
 
 
-operate(new car())
-operate(new Bike())
+// operate(new car())
+// operate(new Bike())
 
+
+// access modifier
+
+
+class Driver4 {
+    public name: string;
+    private nid: string;
+    protected earning: number;
+
+    constructor(name: string, nid: string, earning: number) {
+        this.name = name;
+        this.nid = nid;
+        this.earning = earning;
+    }
+
+}
+
+
+const driver4 = new Driver4("boos ", "nid1234567", 45678);
+
+console.log(driver4.name)
+
+
+
+class proDriver extends Driver4 {
+
+    certifiedDriver() {
+        console.log("he is a pro driver!!");
+
+    }
+    constructor() {
+        super("nagiba", "nid2345678", 23333);
+        this.earning = 50000
+    }
+}
+
+const nextGenDriver = new proDriver();
+console.log(nextGenDriver)
+console.log(nextGenDriver.certifiedDriver())
