@@ -41,7 +41,7 @@ function printId(id: string | number) {
     }
 }
 
-printId(34);
+// printId(34);
 
 
 
@@ -63,5 +63,39 @@ function checkUSer(user: TDriver | TAdmin) {
 
 const Driver: TDriver = { driverName: "mokhles" }
 const Admin: TAdmin = { role: "superAdmin" }
-checkUSer(Driver);
+// checkUSer(Driver);
+
+
+
+
+
+
+
+// instanceof
+
+class car {
+    Drive() {
+        console.log("Dirve Car")
+    }
+}
+
+class Bike {
+    Ride() {
+        console.log("moter Bike ")
+    }
+}
+
+
+function operate(vehicle: car | Bike) {
+    if (vehicle instanceof car) {
+        vehicle.Drive()
+
+    } else {
+        vehicle.Ride()
+    }
+}
+
+
+operate(new car())
+operate(new Bike())
 
